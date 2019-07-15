@@ -33,6 +33,9 @@ ro.kernel.ebpf.supported=false
 # Camera
 camera2.portability.force_api=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Dalvik heap
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=192m
