@@ -101,6 +101,9 @@ persist.rild.nitz_short_ons_1=""
 persist.rild.nitz_short_ons_2=""
 persist.rild.nitz_short_ons_3=""
 
+# Recovery
+persist.vendor.recovery_update=false
+
 # Sensors
 debug.sensors=1
 
