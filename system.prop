@@ -97,6 +97,10 @@ persist.rild.nitz_short_ons_3=""
 # Sensors
 debug.sensors=1
 
+# SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8974
+
 # Time
 persist.timed.enable=true
 
