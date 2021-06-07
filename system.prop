@@ -105,6 +105,9 @@ debug.sensors=1
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8974
 
+# System
+ro.vndk.version=current
+
 # Time
 persist.timed.enable=true
 
