@@ -24,6 +24,9 @@ av.offload.enable=true
 bluetooth.enable_timeout_ms=12000
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
+# BPF
+ro.kernel.ebpf.supported=false
+
 # Camera
 camera2.portability.force_api=1
 
