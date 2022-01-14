@@ -77,7 +77,7 @@ persist.hwc.mdpcomp.enable=true
 persist.log.tag.OpenGLRenderer=S
 persist.sys.sf.color_saturation=1.0
 debug.hwui.use_buffer_age=false
-debug.renderengine.backend=threaded
+debug.renderengine.backend=gles
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 debug.sf.layer_caching_active_layer_timeout_ms=1000
@@ -134,10 +134,6 @@ persist.vendor.recovery_update=false
 
 # Sensors
 debug.sensors=1
-
-# Skia
-# (b/183612348): Enable skia reduceOpsTaskSplitting
-renderthread.skia.reduceopstasksplitting=true
 
 # SoC
 ro.soc.manufacturer=Qualcomm
