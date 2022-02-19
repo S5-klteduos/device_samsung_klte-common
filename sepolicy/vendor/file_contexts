@@ -61,6 +61,7 @@
 /tombstones                                             u:object_r:rootfs:s0
 
 # sockets
+/data/cam_socket2                                       u:object_r:camera_socket:s0
 /data/cam_socket3                                       u:object_r:camera_socket:s0
 
 # sysfs
