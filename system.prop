@@ -49,6 +49,7 @@ ro.sf.lcd_density=480
 debug.sf.hw=1
 debug.mdpcomp.logs=0
 persist.hwc.mdpcomp.enable=true
+persist.log.tag.OpenGLRenderer=S
 debug.hwui.use_buffer_age=false
 debug.renderengine.backend=threaded
 debug.sf.disable_backpressure=1
