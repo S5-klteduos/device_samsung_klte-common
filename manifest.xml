@@ -27,6 +27,11 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IBluetoothAudioProvidersFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport arch="32">passthrough</transport>
         <version>2.4</version>
