@@ -262,9 +262,6 @@ etc/wifi/nvram_net.txt_a0:vendor/etc/wifi/nvram_net.txt_a0
 etc/wifi/nvram_net.txt_muratafem1:vendor/etc/wifi/nvram_net.txt_murata
 etc/wifi/nvram_net.txt_semco3rd:vendor/etc/wifi/nvram_net.txt_semco3rd
 
-# aptX (Moto griffin - NCLS25.86-11-4-6-5)
-vendor/lib/libaptX_encoder.so|b03772672144d4b750a5672c2922aded93bb0512
-
 # Camera (Samsung klte - G900FXXU1CSA1_G900FVIA1CSC1_VIA)
 vendor/lib/libmmjpeg.so|2b0bf12bbb7b63c84db77f922d18a4a335634930
 
