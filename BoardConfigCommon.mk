@@ -13,32 +13,71 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common msm8974
-include device/samsung/msm8974-common/BoardConfigCommon.mk
+COMMON_PATH := device/samsung/msm8974-common
 
-COMMON_PATH := device/samsung/klte-common
+# Android Platform
+TARGET_BOARD_PLATFORM := msm8974
+
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 BUILD_FINGERPRINT := samsung/kltexx/klte:6.0.1/MMB29M/G900FXXU1CRH1:user/release-keys
 
 # Audio
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
+AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
+AUDIO_FEATURE_ENABLED_FLUENCE := true
+AUDIO_FEATURE_ENABLED_HFP := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
+BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_klte.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 
 # Bootloader
+BOARD_VENDOR := samsung
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+TARGET_NO_BOOTLOADER := true
+
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+MALLOC_SVELTE_FOR_LIBC32 := true
+
+# Charger
+BOARD_BATTERY_DEVICE_NAME := "battery"
+BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
+BOARD_CHARGING_CMDLINE_VALUE := "true"
+
+# Display
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
+TARGET_DISABLE_POSTRENDER_CLEANUP := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/config.fs
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -51,6 +90,12 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
+
+# Legacy memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
+# Netd
+TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
@@ -70,18 +115,27 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2411724800
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-modem
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /data/tombstones:/tombstones
+BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Platform
+TARGET_BOARD_PLATFORM := msm8974
+
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
+BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../$(COMMON_PATH)/recovery/recovery_keys.c
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -89,10 +143,14 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_DENSITY := xhdpi
+TARGET_RECOVERY_DEVICE_DIRS += device/samsung/msm8974-common
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
-include $(COMMON_PATH)/sepolicy/sepolicy.mk
+include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
@@ -115,3 +173,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # inherit from the proprietary version
 include vendor/samsung/klte-common/BoardConfigVendor.mk
+include vendor/samsung/msm8974-common/BoardConfigVendor.mk

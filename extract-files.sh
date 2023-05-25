@@ -38,6 +38,9 @@ function blob_fixup() {
                     s|/system/lib|/vendor/lib|g;
                     s|/system/cameradata|/vendor/cameradata|g' "${2}"
             ;;
+        vendor/lib/mediadrm/libwvdrmengine.so)
+            "${PATCHELF}" --replace-needed libprotobuf-cpp-lite.so libprotobuf-cpp-lite-v29.so "${2}"
+            ;;
     esac
 }
 

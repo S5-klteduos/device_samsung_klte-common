@@ -180,6 +180,13 @@
         <item>10</item>
     </integer-array>
 
+    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
+         config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
 
@@ -227,5 +234,18 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+
+    <!-- Disable rounded corners on windows to improve graphics performance -->
+    <bool name="config_supportsRoundedCornersOnWindows">false</bool>
+
+    <!-- AOSP WFD -->
+    <bool name="config_enableWifiDisplay">true</bool>
+    
+    <!-- AlwaysOnDisplay  -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+     
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+    during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
 </resources>

@@ -1,5 +1,11 @@
 # RIL
+persist.multisim.config=dsds
 persist.radio.multisim.config=dsds
+persist.radio.aosp_usr_pref_sel=true
+persist.vendor.radio.aosp_usr_pref_sel=true
 ro.multisim.simslotcount=2
 ro.multisim.set_audio_params=true
 ro.telephony.ril.config=simactivation
+ro.multisim.set_audio_params=true
+ro.qualcomm.perf.cores_online=2
+ro.telephony.sim_slots.count=2
