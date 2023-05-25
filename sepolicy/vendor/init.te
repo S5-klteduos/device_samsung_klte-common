@@ -1,0 +1,4 @@
+allow init sysfs_fingerprint:file setattr;
+
+allow init efs_file:dir mounton;
+allow init proc_last_kmsg:file { r_file_perms setattr };

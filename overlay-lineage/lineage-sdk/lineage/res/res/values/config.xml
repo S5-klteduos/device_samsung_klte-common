@@ -72,5 +72,9 @@
     <!-- Whether to notify fingerprint client of successful cancelled authentication
          (needed for some older vendor fingerprint HAL implementations) -->
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+    
+    <!-- Indicate whether encryption causes significant performances loss.
+         This MUST NOT be set to true on devices produced in 2016 or later -->
+    <bool name="config_trustLegacyEncryption">true</bool>
 
 </resources>

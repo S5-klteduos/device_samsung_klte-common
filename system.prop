@@ -16,6 +16,13 @@ vendor.audio.offload.multiple.enabled=false
 vendor.audio_hal.period_size=192
 vendor.dedicated.device.for.voip=true
 vendor.voice.path.for.pcm.voip=false
+audio.offload.buffer.size.kb=32
+audio.offload.gapless.enabled=false
+av.offload.enable=true
+
+# Bluetooth
+bluetooth.enable_timeout_ms=12000
+ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
 # Camera
 camera2.portability.force_api=1
@@ -28,13 +35,33 @@ dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=2m
 dalvik.vm.heapmaxfree=8m
 
+# Display
+ro.hdcp2.rx=tz
+ro.qualcomm.cabl=1
+ro.secwvk=144
+ro.sf.lcd_density=480
+debug.sf.hw=1
+debug.mdpcomp.logs=0
+persist.hwc.mdpcomp.enable=true
+debug.hwui.use_buffer_age=false
+debug.sf.disable_backpressure=1
+debug.sf.latch_unsignaled=1
+debug.sf.recomputecrop=0
+
 # GPS
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
 ro.qc.sdk.izat.premium_enabled=0
 ro.qc.sdk.izat.service_mask=0x0
 
+# fastbootd
+ro.fastbootd.available=true
+
+# GL
+ro.opengles.version=196608
+
 # Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
 ro.vendor.qti.am.reschedule_service=true
 
 # NFC
@@ -50,12 +77,24 @@ persist.radio.add_power_save=1
 rild.libpath=/system/vendor/lib/libsec-ril.so
 ro.telephony.mms_data_profile=5
 ro.ril.telephony.qan_resp_strings=6
-
-# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 ro.telephony.call_ring.multiple=0
+
+# RIL
+persist.rild.nitz_plmn=""
+persist.rild.nitz_long_ons_0=""
+persist.rild.nitz_long_ons_1=""
+persist.rild.nitz_long_ons_2=""
+persist.rild.nitz_long_ons_3=""
+persist.rild.nitz_short_ons_0=""
+persist.rild.nitz_short_ons_1=""
+persist.rild.nitz_short_ons_2=""
+persist.rild.nitz_short_ons_3=""
 
 # Sensors
 debug.sensors=1
+
+# Time
+persist.timed.enable=true
 
 # Tethering
 net.tethering.noprovisioning=true

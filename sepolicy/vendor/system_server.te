@@ -1,0 +1,16 @@
+allow system_server {
+    efs_file
+    mpctl_data_file
+}:dir search;
+
+allow system_server {
+    efs_file
+    qti_debugfs
+}:file r_file_perms;
+
+allow system_server proc_last_kmsg:file r_file_perms;
+allow system_server app_zygote:process getpgid;
+
+get_prop(system_server, exported_camera_prop);
+get_prop(system_server, userspace_reboot_config_prop);
+get_prop(system_server, userspace_reboot_exported_prop);
