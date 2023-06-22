@@ -66,8 +66,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.msm8974 \
     libshim_camera \
-    libxml2 \
-    Camera2
+    libxml2
 
 # Display
 PRODUCT_PACKAGES += \
