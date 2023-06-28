@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="none">0</item>
+    <item name="ambient.on.display0">0.2</item>
     <item name="screen.on.display0">65</item>
     <item name="screen.full.display0">202</item>
     <item name="bluetooth.active">87</item>
@@ -38,11 +38,7 @@
         <value>2357600</value>
         <value>2457600</value>
     </array>
-    <item name="cpu.idle">3.1</item>
-    <array name="cpu.active">
-        <value>3.5</value>
-    </array>
-    <array name="cpu.active.cluster0">
+    <array name="cpu.core_power.cluster0">
         <value>51.37</value>
         <value>93.97</value>
         <value>115.53</value>
@@ -60,6 +56,8 @@
         <value>381.81</value>
         <value>405.82</value>
     </array>
+    <item name="cpu.idle">3.1</item>
+    <item name="cpu.suspend">2.2</item>
     <item name="battery.capacity">2800</item>
     <array name="wifi.batchedscan">
         <value>.0002</value>
