@@ -1,3 +1,4 @@
+get_prop(hal_sensors_default, default_prop)
 r_dir_file(hal_sensors_default, efs_file)
 
 allow hal_sensors_default {
@@ -34,3 +35,14 @@ allow hal_sensors_default {
 }:lnk_file read;
 
 allow hal_sensors_default firmware_file:dir search;
+allow hal_sensors_default firmware_file:dir rw_file_perms;
+allow hal_sensors_default firmware_file:file create_file_perms;
+allow hal_sensors_default unlabeled:file w_file_perms;
+allow hal_sensors_default sensor_efs_file:file rw_file_perms;
+allow hal_sensors_default app_efs_file:dir search;
+allow hal_sensors_default app_efs_file:file r_file_perms;
+
+# /system/vendor/lib/libsensirion_ks01.so
+allow hal_sensors_default vendor_sensor_lib_file:file execmod;
+allow hal_sensors_default hal_data_file:dir rw_dir_perms;
+allow hal_sensors_default hal_data_file:file rw_file_perms;
