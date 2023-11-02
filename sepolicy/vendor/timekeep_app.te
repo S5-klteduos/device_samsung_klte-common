@@ -10,6 +10,7 @@ app_domain(timekeep_app)
 # Only getattr and search are requested since TimeKeep does not write to its own directory
 # /data/data/com.sony.timekeep only has two empty subdirs
 dontaudit timekeep_app app_data_file:dir { getattr search };
+dontaudit timekeep_app system_data_file:dir search;
 
 allow timekeep_app activity_service:service_manager find;
 
@@ -24,5 +25,8 @@ allow timekeep_app sysfs_rtc:{ file lnk_file } r_file_perms;
 # Set the persist.vendor.timeadjust property
 set_prop(timekeep_app, vendor_timekeep_prop)
 
+allow timekeep_app system_data_file:dir search;
+allow timekeep_app zygote:unix_stream_socket { getopt };
 allow timekeep_app game_service:service_manager { find };
+allow timekeep_app netstats_service:service_manager { find };
 allow timekeep_app content_capture_service:service_manager { find };

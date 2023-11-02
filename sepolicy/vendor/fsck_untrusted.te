@@ -5,5 +5,7 @@ allow fsck_untrusted block_device:dir getattr;
 # /data/media
 allow fsck_untrusted media_rw_data_file:dir getattr;
 
+allow fsck_untrusted sysfs:file { read open };
+
 allowxperm fsck_untrusted vold_device:blk_file ioctl 0x1271;
 allowxperm fsck_untrusted vold_device:blk_file ioctl BLKROGET;

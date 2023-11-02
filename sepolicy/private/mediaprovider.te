@@ -1,0 +1,1 @@
+allow mediaprovider_app rootfs:file { getattr setattr };
