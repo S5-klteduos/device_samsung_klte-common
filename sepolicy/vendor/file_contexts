@@ -58,17 +58,6 @@
 /system/vendor/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
 /system/vendor/firmware/libpn547_fw.so                  u:object_r:nfc_fw_file:s0
 
-# radio
-/data/data/com.android.providers.telephony/databases(/.*)?           u:object_r:radio_core_data_file:s0
-/data/data/com.android.providers.telephony/shared_prefs(/.*)?        u:object_r:radio_core_data_file:s0
-/data/user/0/com.android.providers.telephony/databases(/.*)?         u:object_r:radio_core_data_file:s0
-/data/user/0/com.android.providers.telephony/shared_prefs(/.*)?      u:object_r:radio_core_data_file:s0
-/data/user_de/0/com.android.providers.telephony/databases(/.*)?      u:object_r:radio_core_data_file:s0
-/data/user_de/0/com.android.providers.telephony/shared_prefs(/.*)?   u:object_r:radio_core_data_file:s0
-/data/data/com.android.providers.telephony/opname.db                 u:object_r:radio_core_data_file:s0
-/data/user/0/com.android.providers.telephony/opname.db               u:object_r:radio_core_data_file:s0
-/data/user_de/0/com.android.providers.telephony/opname.db            u:object_r:radio_core_data_file:s0
-
 # rootfs
 /firmware-modem                                         u:object_r:firmware_file:s0
 /tombstones                                             u:object_r:rootfs:s0
@@ -121,6 +110,7 @@
 /sys/devices/virtual/sec/sec_barcode_emul(/.*)?         u:object_r:sysfs_sec_barcode_emul:s0
 /sys/devices/virtual/sec/sec_epen(/.*)?                 u:object_r:sysfs_sec_epen:s0
 /sys/devices/virtual/sec/sec_ir(/.*)?                   u:object_r:sysfs_sec_ir:s0
+/sys/class/sec/sec_ir(/.*)?                             u:object_r:sysfs_sec_ir:s0
 /sys/devices/virtual/sec/sec_key(/.*)?                  u:object_r:sysfs_sec_key:s0
 /sys/devices/virtual/sec/sec_touchkey(/.*)?             u:object_r:sysfs_sec_touchkey:s0
 /sys/devices/virtual/sec/switch(/.*)?                   u:object_r:sysfs_sec_switch:s0
