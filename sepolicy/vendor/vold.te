@@ -17,6 +17,8 @@ allow vold {
 allowxperm vold vold_device:blk_file ioctl 0x1271;
 allowxperm vold vold_device:blk_file ioctl BLKROGET;
 
+allow vold rootfs:dir setattr;
+
 # Allow loading keymaster firmware
 allow vold firmware_file:dir search;
 allow vold firmware_file:file r_file_perms;

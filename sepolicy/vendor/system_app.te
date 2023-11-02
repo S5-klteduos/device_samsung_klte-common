@@ -13,6 +13,9 @@ allow system_app sysfs_zram:file r_file_perms;
 allow system_app system_data_file:dir { remove_name add_name };
 allow system_app system_data_file:file { open create rename w_file_perms setattr };
 
+allow system_app proc_vmallocinfo:file { open read };
+allow system_app system_suspend_control_internal_service:service_manager find;
+
 allow system_app zygote:unix_stream_socket { getopt };
 
 dontaudit system_app {
