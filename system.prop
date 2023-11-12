@@ -47,6 +47,7 @@ dalvik.vm.heapmaxfree=8m
 
 # Display
 ro.hdcp2.rx=tz
+ro.hwui.render_ahead=20
 ro.qualcomm.cabl=1
 ro.secwvk=144
 ro.sf.lcd_density=480
