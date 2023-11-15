@@ -25,6 +25,7 @@ audio.offload.gapless.enabled=false
 av.offload.enable=true
 
 # Bluetooth
+bluetooth.core.le.vendor_capabilities.enabled=false
 bluetooth.enable_timeout_ms=12000
 bluetooth.device.class_of_device=90,2,12
 bluetooth.le.disable_apcf_extended_features=1
