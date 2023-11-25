@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libaudioroute \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing
@@ -160,6 +161,7 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libminijail:32 \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
