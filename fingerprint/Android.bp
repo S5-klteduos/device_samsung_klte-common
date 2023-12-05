@@ -13,6 +13,9 @@ cc_library_shared {
     "QSEEComAPI.c",
     "hash.c",  
     ],
+    header_libs: [
+        "libhardware_headers",
+    ],   
     shared_libs: [
         "liblog",
         "libsqlite",

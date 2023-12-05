@@ -29,7 +29,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <sys/ioctl.h>
 
 #include <hardware/hardware.h>

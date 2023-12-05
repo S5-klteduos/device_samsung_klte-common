@@ -31,7 +31,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <cutils/log.h>
+#include <log/log.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
