@@ -78,6 +78,7 @@ ro.opengles.version=196608
 # Disable media transcoding
 persist.sys.fuse.transcode_user_control=true
 persist.sys.fuse.transcode_enabled=false
+debug.stagefright.ccodec=0
 
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
