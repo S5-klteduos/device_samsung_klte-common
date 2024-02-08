@@ -100,6 +100,13 @@ persist.sys.fuse.transcode_user_control=true
 persist.sys.fuse.transcode_enabled=false
 debug.stagefright.ccodec=0
 
+# LMKD
+ro.lmk.kill_heaviest_task=true
+ro.lmk.use_psi=true
+ro.lmk.use_minfree_levels=false
+ro.lmk.thrashing_limit_decay=50
+ro.lmk.downgrade_pressure=30
+
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 ro.vendor.qti.am.reschedule_service=true
