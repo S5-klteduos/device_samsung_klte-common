@@ -95,17 +95,21 @@ TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
+# Enable SVELTE memory configuration
+MALLOC_SVELTE := true
+
 # Netd
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so \
-    /system/vendor/lib/libperipheral_client.so|libshim_binder.so
+    /system/vendor/lib/libperipheral_client.so|libshim_binder.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libril_shim.so
+
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
-    /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/rild=27
+    /system/vendor/bin/mm-qcamera-daemon=22
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
@@ -129,9 +133,6 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
