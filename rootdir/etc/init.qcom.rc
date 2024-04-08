@@ -132,6 +132,7 @@ on post-fs-data
     chown system system /sys/devices/virtual/mdnie/mdnie/mode_max
     chown system system /sys/devices/virtual/mdnie/mdnie/outdoor
     chown system system /sys/devices/virtual/mdnie/mdnie/scenario
+    chown system system /sys/class/leds/lcd-backlight/max_brightness
 
     # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
