@@ -194,6 +194,7 @@ on early-boot
     # Allow subsystem (modem etc) debugging
     write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
 
+on boot
     # for BT MAC address
     mkdir /efs/bluetooth 0775 radio system
     # if already exist
