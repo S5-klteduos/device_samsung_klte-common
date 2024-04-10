@@ -133,8 +133,8 @@ void LocEngAdapter::setXtraUserAgent() {
         }
 
         void saveUserAgentString(const char* data, const int len) const {
-            const char XTRA_FOLDER[] = "/data/misc/location/xtra";
-            const char USER_AGENT_FILE[] = "/data/misc/location/xtra/useragent.txt";
+            const char XTRA_FOLDER[] = "/data/vendor/location/xtra";
+            const char USER_AGENT_FILE[] = "/data/vendor/location/xtra/useragent.txt";
 
             if (data == NULL || len < 1) {
                 LOC_LOGE("%s:%d]: invalid input data = %p len = %d", __func__, __LINE__, data, len);
