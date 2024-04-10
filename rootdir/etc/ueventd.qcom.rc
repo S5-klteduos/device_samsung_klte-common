@@ -201,3 +201,15 @@
 /sys/devices/f9967000.spi/spi_master/spi32765/spi32765.0/iio:device*   buffer/length    0660   system     system
 /sys/devices/f9924000.spi/spi_master/spi32765/spi32765.0/iio:device*   buffer/enable    0660   system     radio
 /sys/devices/f9924000.spi/spi_master/spi32765/spi32765.0/iio:device*   buffer/length    0660   system     radio
+
+# sys-fs display
+/sys/class/graphics/fb*     connected                0664    system  graphics
+/sys/class/graphics/fb*     edid_modes               0664    system  graphics
+/sys/class/graphics/fb*     hpd                      0664    system  graphics
+/sys/class/graphics/fb*     pa                       0664    system  graphics
+/sys/class/graphics/fb*     product_description      0664    system  graphics
+/sys/class/graphics/fb*     vendor_name              0664    system  graphics
+/sys/class/graphics/fb*     idle_time                0664    system  graphics
+/sys/class/graphics/fb0     csc_cfg                  0660    system  media_rw
+/sys/class/graphics/fb0     mode                     0664    system  graphics
+/sys/class/graphics/fb0     modes                    0664    system  graphics

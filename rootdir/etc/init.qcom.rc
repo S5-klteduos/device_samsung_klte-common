@@ -235,16 +235,6 @@ on early-boot
     # create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
-    # HDMID Permission for sys nodes
-    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
-    chown system graphics /sys/class/graphics/fb1/connected
-    chown system graphics /sys/class/graphics/fb1/edid_modes
-    chown system graphics /sys/class/graphics/fb1/hpd
-
-    # MDP idle notifier
-    chown system graphics /sys/class/graphics/fb0/idle_time
-    chmod 0664 /sys/class/graphics/fb0/idle_time
-    
     #To allow interfaces to get v6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
@@ -413,9 +403,6 @@ on early-boot
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
 
-    # Adjust YUV to RGB Conversion(CSC_Conversion)
-    chown system media_rw /sys/class/graphics/fb0/csc_cfg
-    chmod 0660 /sys/class/graphics/fb0/csc_cfg
 
     # Permissions for InputDevices.
     chown system radio /sys/class/sec/tsp/cmd
