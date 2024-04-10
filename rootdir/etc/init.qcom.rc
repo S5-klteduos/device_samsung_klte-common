@@ -774,7 +774,7 @@ service vendor.macloader /vendor/bin/macloader
     seclabel u:r:macloader:s0
 
 on property:wlan.driver.status=ok
-    start macloader
+    start vendor.macloader
 
 on property:sys.boot_completed=1
     # Audience ES705 UART (klte)
@@ -852,7 +852,7 @@ on property:sys.boot_completed=1
 
     # Post boot services
     rm /data/system/perfd/default_values
-    start mpdecision
+    start vendor.mpdecision
 
     # Symlink directories to access telephony.db and preferred-apn.xml required by libsec-ril
     symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
