@@ -21,7 +21,6 @@ vendor.audio.offload.multiple.enabled=false
 vendor.audio_hal.period_size=192
 vendor.dedicated.device.for.voip=true
 vendor.voice.path.for.pcm.voip=false
-audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=false
 av.offload.enable=true
 

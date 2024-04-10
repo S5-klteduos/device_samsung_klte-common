@@ -99,9 +99,6 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 # Enable SVELTE memory configuration
 MALLOC_SVELTE := true
 
-# Netd
-TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
-
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so \
