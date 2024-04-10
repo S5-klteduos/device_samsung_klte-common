@@ -196,11 +196,6 @@ on post-fs-data
     mkdir /data/misc/perfd 2755 root system
     mkdir /data/system/perfd 2770 root system
 
-    # Remove symlinks to avoid issues with migrate after nandroid restores
-    # Will be recreated at end of boot
-    rm /data/data/com.android.providers.telephony/databases
-    rm /data/data/com.android.providers.telephony/shared_prefs
-
     setprop vold.post_fs_data_done 1
 
 on early-boot
@@ -857,12 +852,6 @@ on property:sys.boot_completed=1
     # Post boot services
     rm /data/system/perfd/default_values
     start mpdecision
-
-    # Symlink directories to access telephony.db and preferred-apn.xml required by libsec-ril
-    symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
-    symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs
-    restorecon /data/data/com.android.providers.telephony/databases
-    restorecon /data/data/com.android.providers.telephony/shared_prefs
 
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.qcom
