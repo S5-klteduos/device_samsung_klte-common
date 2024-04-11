@@ -269,8 +269,13 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # Touch features
+ifneq ($(findstring ks01lte,$(TARGET_PRODUCT)),)
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.ks01lte
+else
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
+endif
 
 # Trust HAL
 PRODUCT_PACKAGES += \
