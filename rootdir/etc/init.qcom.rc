@@ -47,7 +47,7 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
     setprop qcom.audio.init complete
 
-    mount none /vendor/etc/gps.conf /system/etc/gps_debug.conf bind
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
 
 on post-fs
     # for controlling write performance boosting
@@ -202,10 +202,10 @@ on boot
     chmod 0775 /efs/bluetooth
 
     # Create directories for Location services
-    mkdir /data/vendor/location 0770 gps gps
-    mkdir /data/vendor/location/mq 0770 gps gps
-    mkdir /data/vendor/location/xtwifi 0770 gps gps
-    mkdir /data/vendor/location/gpsone_d 0770 system gps
+    mkdir /data/misc/location 0770 gps gps
+    mkdir /data/misc/location/mq 0770 gps gps
+    mkdir /data/misc/location/xtwifi 0770 gps gps
+    mkdir /data/misc/location/gpsone_d 0770 system gps
 
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 2770 radio radio
