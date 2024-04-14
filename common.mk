@@ -212,6 +212,7 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     libsecnativefeature
 
 # Ramdisk
