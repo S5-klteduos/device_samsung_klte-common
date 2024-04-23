@@ -1,1 +1,1 @@
-allow storaged sysfs:file { open getattr r_file_perms };
+allow storaged sysfs:file { getattr open read };

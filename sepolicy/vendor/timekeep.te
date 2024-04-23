@@ -4,6 +4,7 @@
 # /sys/class/rtc/rtc0/since_epoch
 type timekeep, domain;
 type timekeep_exec, exec_type, vendor_file_type, file_type;
+type vendor_timekeep_prop, property_type;
 
 init_daemon_domain(timekeep)
 

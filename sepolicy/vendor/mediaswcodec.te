@@ -1,0 +1,2 @@
+allow mediaswcodec logdr_socket:sock_file w_file_perms;
+allow mediaswcodec logd:unix_stream_socket connectto;

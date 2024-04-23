@@ -1,1 +1,0 @@
-allow toolbox rootfs:dir { open read setattr };

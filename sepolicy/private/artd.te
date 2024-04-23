@@ -1,0 +1,5 @@
+allow artd app_data_file:lnk_file read;
+allow artd radio_data_file:lnk_file read;
+allow artd system_app_data_file:lnk_file read;
+allow artd nfc_data_file:lnk_file read;
+allow artd apk_tmp_file:dir { read open };

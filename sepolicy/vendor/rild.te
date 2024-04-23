@@ -1,26 +1,21 @@
-set_prop(rild, net_radio_prop)
-set_prop(rild, radio_prop)
-set_prop(rild, system_prop)
-get_prop(rild, default_prop)
 get_prop(rild, config_prop)
-get_prop(rild, vold_prop)
+get_prop(rild, default_prop)
+set_prop(rild, default_prop)
+get_prop(rild, system_prop)
+set_prop(rild, net_radio_prop)
 get_prop(rild, vendor_rild_libpath_prop)
+get_prop(rild, vold_prop)
 
 permissive rild;
 
-allow rild alarm_device:chr_file rw_file_perms;
-
-allow rild radio_data_file:dir rw_dir_perms;
-allow rild radio_data_file:file create_file_perms;
-allow rild radio_data_file:lnk_file read;
-
-allow rild proc_net:file w_file_perms;
-allow rild proc_qtaguid_stat:file r_file_perms;
-allow rild sysfs_sec_key:file rw_file_perms;
-allow rild firmware_file:dir search;
+allow rild device:chr_file { ioctl open read };
+allow rild proc_net:file write;
+allow rild proc_qtaguid_stat:file { open read getattr };
+allow rild radio_core_data_file:dir { open read add_name getattr remove_name search write };
+allow rild radio_core_data_file:file { create open read setattr unlink write getattr ioctl lock };
+allow rild sysfs:file write;
 allow rild system_data_file:dir search;
-allow rild system_data_file:lnk_file r_file_perms;
-allow rild radio_core_data_file:lnk_file r_file_perms;
-allow rild radio_core_data_file:dir { search open remove_name add_name rw_dir_perms };
-allow rild radio_core_data_file:file { create open rw_file_perms getattr ioctl lock unlink setattr };
-
+allow rild system_data_file:lnk_file read;
+allow rild system_data_file:dir getattr;
+allow rild system_userdir_file:dir { search getattr };
+allow rild radio_data_file:lnk_file getattr;

@@ -1,0 +1,1 @@
+dontaudit dex2oat system_data_file:dir search;

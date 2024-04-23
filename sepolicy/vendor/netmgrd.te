@@ -1,2 +1,4 @@
-get_prop(netmgrd, radio_prop)
 get_prop(netmgrd, default_prop)
+get_prop(netmgrd, radio_prop)
+
+allow netmgrd system_file:file { lock open read };

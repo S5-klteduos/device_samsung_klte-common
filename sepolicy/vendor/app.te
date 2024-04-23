@@ -1,3 +1,0 @@
-get_prop(appdomain, exported_camera_prop)
-
-allow traceur_app zygote:unix_stream_socket { getopt };

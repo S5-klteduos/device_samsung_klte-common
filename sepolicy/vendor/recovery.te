@@ -1,4 +1,0 @@
-set_prop(recovery, default_prop)
-set_prop(recovery, ffs_config_prop)
-set_prop(recovery, usb_prop)
-set_prop(recovery, system_prop)

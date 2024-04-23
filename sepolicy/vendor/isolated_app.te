@@ -1,6 +1,5 @@
 get_prop(isolated_app, vendor_default_prop)
-allow isolated_app app_data_file:file setattr;
+get_prop(isolated_app, userdebug_or_eng_prop)
+
+dontaudit isolated_app app_data_file:file setattr;
 allow isolated_app content_capture_service:service_manager find;
-allow isolated_app tombstoned_crash_socket:sock_file w_file_perms;
-allow isolated_app proc_uptime:file r_file_perms;
-allow isolated_app tombstone_data_file:file { append };

@@ -1,4 +1,0 @@
-allow dexoptanalyzer {
-   privapp_data_file
-   app_data_file
-}:dir search;

@@ -1,1 +1,3 @@
 get_prop(location, default_prop)
+
+allow location system_file:file { getattr open read };

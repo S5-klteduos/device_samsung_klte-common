@@ -1,8 +1,8 @@
-qemu.sf.lcd_density                              u:object_r:qemu_sf_lcd_density_prop:s0
-
-persist.ril.                                     u:object_r:radio_prop:s0
-persist.vendor.timeadjust                        u:object_r:vendor_timekeep_prop:s0
-service.camera.hdmi_preview                      u:object_r:camera_prop:s0
+persist.vendor.timeadjust         u:object_r:vendor_timekeep_prop:s0
+qemu.sf.lcd_density               u:object_r:qemu_sf_lcd_density_prop:s0
+qemu.hw.mainkeys                  u:object_r:qemu_hw_prop:s0
 
 # Hardware
-ro.hardware.chipname                             u:object_r:exported_default_prop:s0
+ro.hardware.chipname              u:object_r:exported_default_prop:s0
+ro.secure                         u:object_r:userdebug_or_eng_prop:s0
+
