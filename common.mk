@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Advanced Display
 PRODUCT_PACKAGES += \
     AdvancedDisplay
