@@ -90,6 +90,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 # Legacy memfd
 TARGET_HAS_MEMFD_BACKPORT := true
 
+# Enable SVELTE memory configuration
+MALLOC_SVELTE := true
+
 # Netd
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
@@ -99,8 +102,7 @@ TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/libperipheral_client.so|libshim_binder.so
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
-    /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/rild=27
+    /system/vendor/bin/mm-qcamera-daemon=22
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
@@ -124,9 +126,6 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
