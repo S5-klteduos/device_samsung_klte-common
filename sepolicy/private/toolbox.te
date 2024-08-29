@@ -1,0 +1,1 @@
+allow toolbox rootfs:dir read;
