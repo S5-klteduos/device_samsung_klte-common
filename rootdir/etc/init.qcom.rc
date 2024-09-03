@@ -391,6 +391,9 @@ on early-boot
     chown system system /sys/class/lcd/panel/alpm
     chmod 0660 /sys/class/lcd/panel/alpm
 
+    # Charger
+    chown system system /sys/class/power_supply/battery/batt_slate_mode
+
     # Auto Brightness
     chown system system /sys/class/backlight/panel/auto_brightness
     chmod 0664 /sys/class/backlight/panel/auto_brightness
