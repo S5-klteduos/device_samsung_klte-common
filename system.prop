@@ -144,6 +144,8 @@ persist.vendor.recovery_update=false
 debug.sensors=1
 
 # SoC
+ro.product.vendor.manufacturer=Google
+ro.product.manufacturer=Google
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=MSM8974
 
