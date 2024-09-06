@@ -1,1 +1,2 @@
 allow dexoptanalyzer privapp_data_file:dir search;
+allow dexoptanalyzer app_data_file:dir search;
