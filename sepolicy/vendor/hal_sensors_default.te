@@ -46,3 +46,5 @@ allow hal_sensors_default app_efs_file:file r_file_perms;
 allow hal_sensors_default vendor_sensor_lib_file:file execmod;
 allow hal_sensors_default hal_data_file:dir rw_dir_perms;
 allow hal_sensors_default hal_data_file:file rw_file_perms;
+
+allow hal_sensors_default sensors_efs_file:file rw_file_perms;
