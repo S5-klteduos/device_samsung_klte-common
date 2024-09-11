@@ -23,9 +23,9 @@
 /dev/block/platform/msm_sdcc\.1/by-name/fota            u:object_r:misc_block_device:s0
 
 # data files
-/data/.cid.info                                         u:object_r:wifi_data_file:s0
-/data/.psm.info                                         u:object_r:wifi_data_file:s0
-/data/.wifiver.info                                     u:object_r:wifi_data_file:s0
+/data/vendor/conn/.cid.info                                         u:object_r:wifi_data_file:s0
+/data/vendor/conn/.psm.info                                         u:object_r:wifi_data_file:s0
+/data/vendor/conn/.wifiver.info                                     u:object_r:wifi_data_file:s0
 
 # device nodes
 /dev/alarm                                              u:object_r:alarm_device:s0
@@ -38,11 +38,11 @@
 /dev/stune(/.*)?                                        u:object_r:cgroup:s0
 
 # efs files
-/efs/bluetooth(/.*)?                                    u:object_r:bluetooth_efs_file:s0
-/efs/wifi(/.*)?                                         u:object_r:wifi_efs_file:s0
+/mnt/vendor/efs/bluetooth(/.*)?                                    u:object_r:bluetooth_efs_file:s0
+/mnt/vendor/efs/wifi(/.*)?                                         u:object_r:wifi_efs_file:s0
 
 # executeables
-/system/vendor/bin/macloader                            u:object_r:macloader_exec:s0
+/(vendor|system/vendor)/bin/macloader                            u:object_r:macloader_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.4-service\.clearkey              u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software       u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung                u:object_r:hal_ir_default_exec:s0
@@ -53,9 +53,9 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock         u:object_r:hal_power_stats_default_exec:s0
 
 # firmware
-/system/vendor/firmware/bcm(.*).hcd                     u:object_r:bt_fw_file:s0
-/system/vendor/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
-/system/vendor/firmware/libpn547_fw.so                  u:object_r:nfc_fw_file:s0
+/(vendor|system/vendor)/firmware/bcm(.*).hcd                     u:object_r:bt_fw_file:s0
+/(vendor|system/vendor)/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
+/(vendor|system/vendor)/firmware/libpn547_fw.so                  u:object_r:nfc_fw_file:s0
 
 # radio
 /data/data/com.android.providers.telephony/databases(/.*)?           u:object_r:radio_core_data_file:s0
@@ -69,8 +69,13 @@
 /data/user_de/0/com.android.providers.telephony/opname.db            u:object_r:radio_core_data_file:s0
 
 # rootfs
-/firmware-modem                                         u:object_r:firmware_file:s0
+/vendor/firmware-modem                                  u:object_r:firmware_file:s0
 /tombstones                                             u:object_r:rootfs:s0
+
+# firmware images
+#
+#/vendor/firmware_mnt(/.*)?                                     u:object_r:firmware_file:s0
+#/vendor/firmware-modem(/.*)?                                   u:object_r:firmware-modem_file:s0
 
 # sockets
 /data/cam_socket2                                       u:object_r:camera_socket:s0

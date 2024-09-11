@@ -46,7 +46,7 @@ on init
 on fs
     mount_all /vendor/etc/fstab.qcom
 
-    restorecon_recursive /efs
+    restorecon_recursive /mnt/vendor/efs
 
     chown system radio /dev/block/platform/msm_sdcc.1/by-name
     chmod 0775 /dev/block/platform/msm_sdcc.1/by-name
@@ -77,24 +77,24 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     # for WIFI TRP/TIS
-    chown system root /data/.psm.info
-    chmod 0664 /data/.psm.info
+    chown system root /data/vendor/conn/.psm.info
+    chmod 0664 /data/vendor/conn/.psm.info
 
     # for WIFI Version
-    write /data/.wifiver.info 0
-    chown system root /data/.wifiver.info
-    chmod 0664 /data/.wifiver.info
-    restorecon /data/.wifiver.info
+    write /data/vendor/conn/.wifiver.info 0
+    chown system root /data/vendor/conn/.wifiver.info
+    chmod 0664 /data/vendor/conn/.wifiver.info
+    restorecon /data/vendor/conn/.wifiver.info
 
     # for WIFI MAC address
-    mkdir /efs/wifi 0775 radio system
-    chown system wifi /efs/wifi/.mac.info
-    chmod 0660 /efs/wifi/.mac.info
-    restorecon /efs/wifi/.mac.info
+    mkdir /mnt/vendor/efs/wifi 0775 radio system
+    chown system wifi /mnt/vendor/efs/wifi/.mac.info
+    chmod 0660 /mnt/vendor/efs/wifi/.mac.info
+    restorecon /mnt/vendor/efs/wifi/.mac.info
 
     # for WIFI Front End Module
-    chown system system /data/.cid.info
-    chmod 0664 /data/.cid.info
+    chown system system /data/vendor/conn/.cid.info
+    chmod 0664 /data/vendor/conn/.cid.info
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
@@ -133,9 +133,6 @@ on post-fs-data
     chown system system /sys/devices/virtual/mdnie/mdnie/outdoor
     chown system system /sys/devices/virtual/mdnie/mdnie/scenario
 
-    # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
-    mkdir /data/system 0775 system system
-
     # Create tombstones
     mkdir /data/tombstones 0771 system system
 
@@ -143,37 +140,37 @@ on post-fs-data
     mkdir /data/misc/radio 0775 radio radio
 
     # drm and related files in EFS
-    mkdir /efs/drm 0774 drm system
-    mkdir /efs/drm/sdrm 0774 drm system
-    mkdir /efs/drm/sdrm/data_agent 0774 drm system
-    restorecon /efs/drm
-    restorecon /efs/drm/sdrm
-    restorecon /efs/drm/sdrm/data_agent
+    mkdir /mnt/vendor/efs/drm 0774 drm system
+    mkdir /mnt/vendor/efs/drm/sdrm 0774 drm system
+    mkdir /mnt/vendor/efs/drm/sdrm/data_agent 0774 drm system
+    restorecon /mnt/vendor/efs/drm
+    restorecon /mnt/vendor/efs/drm/sdrm
+    restorecon /mnt/vendor/efs/drm/sdrm/data_agent
 
     # h2k permission
-    chmod 0644 /efs/redata.bin
-    chown radio radio /efs/h2k.dat
-    chmod 0644 /efs/h2k.dat
+    chmod 0644 /mnt/vendor/efs/redata.bin
+    chown radio radio /mnt/vendor/efs/h2k.dat
+    chmod 0644 /mnt/vendor/efs/h2k.dat
 
     # DRK permission
-    mkdir /efs/prov 0770 radio system
-    chown radio system /efs/prov/libdevkm.lock
-    chmod 0660 /efs/prov/libdevkm.lock
+    mkdir /mnt/vendor/efs/prov 0770 radio system
+    chown radio system /mnt/vendor/efs/prov/libdevkm.lock
+    chmod 0660 /mnt/vendor/efs/prov/libdevkm.lock
 
     # OTG Test
     chown system radio /sys/class/host_notify/usb_otg/booster
     chmod 0660 /sys/class/host_notify/usb_otg/booster
 
     # wifi
-    mkdir /efs/wifi 0775 system system
+    mkdir /mnt/vendor/efs/wifi 0775 system system
 
     # Permission for fast dormacy for RIL
     chown system radio /sys/devices/virtual/sec/bamdmux/waketime
 
     # for TRP/TIS
-    write /data/.psm.info 1
-    chown system root /data/.psm.info
-    chmod 0660 /data/.psm.info
+    write /data/vendor/conn/.psm.info 1
+    chown system root /data/vendor/conn/.psm.info
+    chmod 0660 /data/vendor/conn/.psm.info
 
     # symlink to bugreport storage location
     symlink /data/data/com.android.shell/files/bugreports /data/bugreports
@@ -210,10 +207,10 @@ on early-boot
     write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
 
     # for BT MAC address
-    mkdir /efs/bluetooth 0775 radio system
+    mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
     # if already exist
-    chown radio system /efs/bluetooth
-    chmod 0775 /efs/bluetooth
+    chown system bluetooth /mnt/vendor/efs/bluetooth
+    chmod 0770 /mnt/vendor/efs/bluetooth
 
     # Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
@@ -660,9 +657,9 @@ on early-boot
 
     # permissions for bluetooth.
     chown bluetooth bluetooth ro.bt.bdaddr_path
-    chown radio bluetooth /efs/bluetooth/bt_addr
-    chmod 0755 /efs/bluetooth/bt_addr
-    restorecon_recursive /efs/bluetooth
+    chown system bluetooth /mnt/vendor/efs/bluetooth/bt_addr
+    chmod 0660 /mnt/vendor/efs/bluetooth/bt_addr
+    restorecon_recursive /mnt/vendor/efs/bluetooth
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -686,17 +683,17 @@ on early-boot
     chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite
 
     # Sensors
-    chown system system /efs/prox_cal
-    chmod 0640 /efs/prox_cal
-    restorecon /efs/prox_cal
+    chown system system /mnt/vendor/efs/prox_cal
+    chmod 0640 /mnt/vendor/efs/prox_cal
+    restorecon /mnt/vendor/efs/prox_cal
 
-    chown system system /efs/FactoryApp/baro_delta
-    chmod 0640 /efs/FactoryApp/baro_delta
-    restorecon /efs/FactoryApp/baro_delta
+    chown system system /mnt/vendor/efs/FactoryApp/baro_delta
+    chmod 0640 /mnt/vendor/efs/FactoryApp/baro_delta
+    restorecon /mnt/vendor/efs/FactoryApp/baro_delta
 
-    chown system system /efs/gyro_cal_data
-    chmod 0640 /efs/gyro_cal_data
-    restorecon /efs/gyro_cal_data
+    chown system system /mnt/vendor/efs/gyro_cal_data
+    chmod 0640 /mnt/vendor/efs/gyro_cal_data
+    restorecon /mnt/vendor/efs/gyro_cal_data
 
     # Set permissions for firmware path control
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
